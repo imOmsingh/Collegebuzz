@@ -1,0 +1,14 @@
+.mainCont{
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card{
+    height: 400px;
+    width: 350px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
