@@ -31,6 +31,8 @@ export default function Hero() {
         <div className={styles.singleOption} style={{borderBottom: "3px solid #0056d2"}}>College Hubs</div>
         <div className={styles.singleOption}>Resources</div>
         <div className={styles.singleOption}>Students</div>
+        <div className={styles.singleOption}>College Annual Fests</div>
+
 
         
     </div>
