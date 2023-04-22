@@ -1,63 +1,55 @@
-.eventsMain{
+.mainCont{
     width: 100%;
     padding: 20px 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.bigHeading{
-    color: #1f1f1f;
-    font-size: 1.75rem;
-    line-height: 2.25rem;
-    font-family: "Source Sans Pro",Arial,sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.1px;
-    margin: 0px 40px;
-    padding: 10px 5px;
-    display: inline-block;
-    border-bottom: 3px solid #0056d2
-}
 .card{
-    height: 430px;
+    height: 400px;
     width: 350px;
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.topCont{
-    height: 40%;
-    width: 100%;
     position: relative;
+    overflow: hidden;
+}
+.imageCont{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+}
+.card:hover .bottomCont{
+    bottom: -50px;
 }
 .bottomCont{
-    padding: 20px;
-    height: 60%;
+    border-radius: 10px;
+    height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    position: absolute;
+    background-color: white;
+    bottom: -300px;
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+    padding: 20px 10px;
 }
-.heading{
+.mainHead{
     color: rgb(31, 31, 31);
     font-size: 1.25rem;
     line-height: 1.75rem;
     font-family: "Source Sans Pro", Arial, sans-serif;
     font-weight: 600;
     letter-spacing: -0.1px;
-    margin-bottom: 30px;
 }
-.bottomCont p{
-    color: rgb(99, 99, 99);
-    letter-spacing: 0px;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-family: "Source Sans Pro", Arial, sans-serif;
-    font-weight: 400;
-    margin-right: 4px;
-    margin-bottom: 5px;
-   
+.descCont{
+    height: 60%;
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
 }
-.readMore{
+.register{
     width: 80%;
     height: 40px;
     color: white;
@@ -69,11 +61,10 @@
     border-radius: 5px;
     transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1) ;
     cursor: pointer;
-}
-.readMore:hover{
-
     color: #0056d2;
     background-color: white;
     border: 1px solid #0056d2
     ;
-}   
+    
+}
+
