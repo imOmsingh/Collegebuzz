@@ -1,0 +1,179 @@
+.mainCont{
+    position: relative;
+}
+
+.header{
+    height: 95vh;
+    background-image: linear-gradient(to right,rgba(2,0,26,100),rgba(109,14,130,0.2)), url(./mainpage.jpg);
+    /* background-image: url(../img/hero.jpg); */
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
+    position: relative;
+
+}
+.logo-box{
+    position: absolute;
+    left: 40px;
+    top: 40px;
+}
+.logo{
+    height: 35px;
+    animation: moveInRight 1s ;
+}
+/* .logo:hover{
+    animation: moveInRight 1s ;
+} */
+.headingPrimary{
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 60px;
+}
+.main{
+    display: block;
+    font-size: 60px;
+    font-weight:700;
+    animation-name: moveInleft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 3s;
+    animation-iteration-count: 3; */
+}
+.sub{
+    display:block;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 7.4px;
+    animation: moveInRight 1s ease-in-out;
+}
+.textBox{
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+@keyframes moveInleft {
+    0%{
+        opacity:0;
+        transform: translateX(-100px);
+
+    }
+    80%{
+        transform:translateX(10px);
+    }
+
+    100%{
+        opacity:1;
+        transform: translateX(0);
+    }
+    
+}
+#signin{
+    margin-right: 35px;
+}
+@keyframes moveInRight{
+    0%{
+        opacity:0;
+        transform: translateX(100px);
+
+    }
+    80%{
+        transform:translateX(-10px);
+    }
+
+    100%{
+        opacity:1;
+        transform: translateX(0);
+    }
+    
+}
+.buttonCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+}
+.button {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    width: 300px;
+  }
+  
+  .button:hover {
+    background-color:#7e46f7;
+    box-shadow: 0px 15px 20px rgba(69,174,247,0.2);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  .button:active {
+    transform: translateY(-1px);
+  }
+
+  .navBar{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 70px;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+  }
+  .searchBar{
+    width: 50%;
+    height: 40px;
+    border-radius: 30px;
+    font-size: 16px;
+    border: none;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-color: white;
+  }
+  .searchBarInput{
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+    font-size: 16px;
+    padding: 0px 20px;
+    border: none;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .logo{
+    font-weight: 600;
+    font-size: 23px;
+    color: white;
+  }
+  .optionsBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .singleBar{
+    margin-right: 30px;
+    font-weight: 300;
+    font-size: 20px;
+    color: white;
+  }
