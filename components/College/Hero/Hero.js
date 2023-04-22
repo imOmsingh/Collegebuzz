@@ -1,11 +1,16 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Hero.module.css'
 import college from './college.webp'
 import logo from './logo.jpeg'
 import Hubs from '../CollegeHubs/Hubs'
+import Annualfests from '../Annualfests/Annualfests'
+import Students from '../Students/Students'
 
 export default function Hero() {
+
+    const [option, setOption] = useState('hubs')
+
   return (
     <>
     <div className={styles.topCont}>
@@ -28,16 +33,33 @@ export default function Hero() {
     </div>
 
     <div className={styles.optionBar}>
-        <div className={styles.singleOption} style={{borderBottom: "3px solid #0056d2"}}>College Hubs</div>
-        <div className={styles.singleOption}>Resources</div>
-        <div className={styles.singleOption}>Students</div>
-        <div className={styles.singleOption}>College Annual Fests</div>
-
-
-        
+        <div className={styles.singleOption} onClick={()=>{setOption('hubs')}} id={option === 'hubs' && styles.underline} >College Hubs</div>
+        <div className={styles.singleOption} onClick={()=>{setOption('hubs')}}>Resources</div>
+        <div className={styles.singleOption} onClick={()=>{setOption('students')}} id={option === 'students' && styles.underline}>Students</div>
+        <div className={styles.singleOption} onClick={()=>{setOption('annualFests')}} id={option === 'annualFests' && styles.underline} >College Annual Fests</div>
     </div>
 
-    <Hubs/>
+    {
+        option === 'hubs'
+        &&
+        <Hubs/>
+
+    }
+
+    {
+        option === 'students'
+        &&
+        <Students/>
+
+    }
+
+{
+        option === 'annualFests'
+        &&
+        <Annualfests/>
+
+    }
+
 
     </>
 
