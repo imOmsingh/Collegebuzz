@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
 import Usercontext from '@/context/Usercontext/Usercontext';
+import Login from '@/components/Auth/Login/Login';
 
 export default function login() {
 
@@ -41,11 +42,12 @@ export default function login() {
 
   return (
     <>
-        <div>Email</div>
+        {/* <div>Email</div>
         <input onChange={(e)=>{ setEmail(e.target.value) }} />
         <div>Password</div>
         <input onChange={(e)=>{ setPassword(e.target.value) }} />
-        <button onClick={signIn}>Signin</button>
+        <button onClick={signIn}>Signin</button> */}
+        <Login/>
     </>
   )
 }
