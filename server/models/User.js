@@ -12,6 +12,9 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    studentYear:{
+        type:Number
+    },
     college:{
         type: mongoose.Types.ObjectId,
         ref: "College",

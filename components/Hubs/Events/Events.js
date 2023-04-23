@@ -21,7 +21,7 @@ export default function Events({events}) {
                             <p> 100% {item.mode}</p>
                             <p>{item.noofdays} days event</p>
                             <p>{item.startdate} - 26Apr</p>
-                            <Link href='/hubs'><div className={styles.readMore}>Read More</div></Link> 
+                            <Link href={`/singleevent/${item._id}`}><div className={styles.readMore}>Read More</div></Link> 
                         </div>
                     </div>
                 )
@@ -47,7 +47,7 @@ export default function Events({events}) {
                             <p> 100% {item.mode}</p>
                             <p>{item.noofdays} days event</p>
                             <p>{item.startdate} - 26Apr</p>
-                            <Link href='/hubs'><div className={styles.readMore}>Read More</div></Link> 
+                            <Link href={`/singleevent/${item._id}`}><div className={styles.readMore}>Read More</div></Link> 
                         </div>
                     </div>
                 )

@@ -18,6 +18,8 @@
             const hubsRoute = require("./routes/Hubs");
             const eventRoute = require("./routes/Events");
             const userRoute = require("./routes/User");
+            const resourceRoute = require("./routes/Resources");
+
 
 
 
@@ -48,7 +50,7 @@
             server.use('/api/hubs',hubsRoute)
             server.use('/api/event',eventRoute)
             server.use('/api/user',userRoute)
-
+            server.use('/api/resource',resourceRoute)
 
 
             

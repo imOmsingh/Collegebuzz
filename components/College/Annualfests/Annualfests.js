@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import styles from './Annualfests.module.css'
 import gdsc from './gdsc.png'
@@ -51,7 +52,7 @@ export default function Annualfests({id}) {
             <div className={styles.bottomCont}>
               <div className={styles.mainHead}>{item.name}</div>
               <div className={styles.descCont}>{item.description}</div>
-              <div className={styles.register}>Register</div>
+              <Link href={`/singleevent/${item._id}`}><div className={styles.register}>Register</div></Link>
             </div>
     
               

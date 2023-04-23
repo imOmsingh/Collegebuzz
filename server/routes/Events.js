@@ -68,6 +68,28 @@ router.get('/getcollegeevent',async (req,res)=>{
 
 })
 
+router.get('/geteventbyid',async (req,res)=>{
+
+    try {
+
+        const query = req.query;
+        const { id } = query;
+    
+        const event = await  Event.findById(id)
+        if(!event){
+            return res.status(500).json({success:false,message:"Event can not fetched"});
+        }
+    
+        res.status(200).json({success:true,message:"Event is fetched",event});
+        
+    } catch (error) {
+        
+        res.status(500).json({success:false,message:'Event can not be fetched',error});
+
+    }
+
+})
+
     
 
 
