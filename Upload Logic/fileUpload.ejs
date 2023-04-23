@@ -1,0 +1,9 @@
+<!--DELETE THIS FILE AFTER OSDHACK23-->
+<%- include('../../shared/includes/head', {pageTitle: 'File Upload'}) %>
+</head>
+<body>
+    <form action="/?_csrf=<%= locals.csrfToken %>" method="POST" enctype="multipart/form-data">
+        <input type="file" name="notesUpload" id="" accept="application/pdf">
+        <button type="submit">Upload Notes</button>
+    </form>
+    <%- include('../../shared/includes/footer') %>

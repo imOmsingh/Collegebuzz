@@ -1,0 +1,19 @@
+<!--Remember to shift this page to the admin side after the hackathon-->
+<%- include('../../shared/includes/head', {pageTitle: 'All Products'}) %>
+</head>
+<body>
+    <%- include('../../shared/includes/header') %>
+    <main>
+        <h1>Add New Product</h1>
+        <form action="/customer/products?_csrf=<%= locals.csrfToken %>" method="POST" enctype="multipart/form-data">
+            <p>
+                <label for="image">Image</label>
+                <input type="file" name="image" id="image" accept="image/png, image/jpg">
+            </p>
+            <p>
+                <button type="reset" class="btn btn-alt">Reset</button>
+                <button type="submit" class="btn">Save</button>
+            </p>
+        </form>
+    </main>
+    <%- include('../../shared/includes/footer') %>
