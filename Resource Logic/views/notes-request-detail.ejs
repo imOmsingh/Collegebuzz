@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'Post title' }) %>
+    <link rel="stylesheet" href="/styles/posts.css">
+</head>
+
+<body>
+  <%- include('includes/header') %>
+    <main id="post-detail">
+      <h1>
+        <%= post.title%>
+      </h1>
+      <section id="post-meta">
+        <address> <a href="mailto:<%= post.author.email%>">
+            <%= post.author.name %>
+          </a></address>
+        | <time datetime="<%= post.date %>">
+          <%= post.humanReadableDate %>
+        </time>
+      </section>
+      <hr>
+      <section>
+        <p id="body"><%= post.body %></p>
+      </section>
+      <div>
+        <form action="/notes-request-detail" method="POST" enctype="multipart/form-data">
+          <p>
+              <label for="image">Image</label>
+              <input type="file" name="image" id="image" accept="image/png, image/jpg">
+          </p>
+          <input type="file" name="notesUpload" id="" accept="application/pdf">
+          <p>
+              <button type="reset" class="btn btn-alt">Reset</button>
+              <button type="submit" class="btn">Save</button>
+          </p>
+      </form>
+      </div>
+      
+    </main>
+</body>
+</html>
