@@ -6,39 +6,36 @@ import Login from '@/components/Auth/Login/Login';
 
 export default function login() {
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const router = useRouter();
+    // const [email, setEmail] = useState('')
+    // const [password, setPassword] = useState('')
+    // const router = useRouter();
 
-    const usercontext = useContext(Usercontext);
-    const { user,setUser,setUserName,setId } = usercontext;
+    // const usercontext = useContext(Usercontext);
+    // const { user,setUser,setUserName,setId } = usercontext;
 
 
-    const signIn  = async () =>{
+    // const signIn  = async () =>{
 
-        try {
-            const res = await axios.get('/api/user/login',{
-                params:{
-                    email,
-                    password,
-                }
+    //     try {
+    //         const res = await axios.get('/api/user/login',{
+    //             params:{
+    //                 email,
+    //                 password,
+    //             }
                 
-            })
-            setUser(true)
-            setUserName(res.data.user[0].name)
-            setId(res.data.user[0]._id)
-            console.log(res)
-            router.push('/')
+    //         })
+    //         setUser(true)
+    //         setUserName(res.data.user[0].name)
+    //         setId(res.data.user[0]._id)
+    //         console.log(res)
+    //         router.push('/')
             
-        } catch (error) {
-            console.log(error)
+    //     } catch (error) {
+    //         console.log(error)
             
-        }
+    //     }
 
-        
-
-
-    }
+    // }
 
   return (
     <>

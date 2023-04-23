@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar/Navbar';
 import Hero from '@/components/Resources/Hero/Hero';
 import axios from 'axios';
 import React from 'react'
@@ -23,6 +24,7 @@ export async function getServerSideProps(context) {
 export default function index({resource}) {
   return (
     <div>
+      <Navbar/>
         <Hero resource={resource}/>
     </div>
   )

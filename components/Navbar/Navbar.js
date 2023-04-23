@@ -12,14 +12,12 @@ export default function Navbar() {
                 setCollegeList([])
                 return
             }
-            console.log(search)
             const res = await axios.get('/api/college/searchcollege',{
                 params:{
                     search
                 }
             })
             setCollegeList(res.data)
-            console.log(res)
             
         } catch (error) {
             console.log(error)

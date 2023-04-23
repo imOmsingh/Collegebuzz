@@ -17,7 +17,6 @@ export default function Students({id}) {
           }
         })
         setStudentList(res.data.student)
-        console.log(res)
         
       } catch (error) {
         console.log(error)

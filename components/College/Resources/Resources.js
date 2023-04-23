@@ -19,7 +19,6 @@ export default function Resources({id}) {
                         id
                     }
                 })
-                console.log(res)
                 setResource(res.data.resource);
                 
             } catch (error) {

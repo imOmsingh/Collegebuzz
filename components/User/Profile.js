@@ -11,6 +11,8 @@ export default function Profile() {
   const [edit, setEdit] = useState(false)
   const [name, setName] = useState('');
   const [rank, setRank] = useState('');
+  const [college, setCollege] = useState({});
+
 
 
 
@@ -36,6 +38,28 @@ export default function Profile() {
     fetchUser()
 
   }, [])
+
+  useEffect(() => {
+
+    const fecthCollege = async () =>{
+
+      try {
+        const res = await axios.get('/api/college/getcollege',{
+          params:{
+            id:user.college
+          }
+        })
+        setCollege(res.data.college)
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
+
+    fecthCollege()
+
+  }, [user])
+  
 
   const fetchUser = async () =>{
 
@@ -63,7 +87,6 @@ export default function Profile() {
         name,
         codeforce_rating:rank
       })
-      console.log(res)
       fetchUser()
       setEdit(false)
 
@@ -104,7 +127,7 @@ export default function Profile() {
 
         </div>
         <div className={styles.userName}>
-            <div className={styles.name}>{user.college}</div>
+            <div className={styles.name}>{college.name}</div>
             {
               edit ?
               <div onClick={hanndleEditUser} style={{marginTop:40,width:'100%',textAlign:'center',cursor:'pointer'}}><u>Save Details</u></div>

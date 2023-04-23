@@ -23,7 +23,6 @@ export default function Hubs({id}) {
                 })
 
                 if(res.status){
-                    console.log(res)
                     setFetchHubs(res.data.hub)
                 }
             
@@ -47,7 +46,9 @@ export default function Hubs({id}) {
                 return(
                     
                     <div className={styles.card}>
-                        <div className={styles.cardImage}></div>
+                        <div className={styles.cardImage}>
+                            <img src={item.logo} style={{height:'100%',width:'100%'}} layout={'fill'}/>
+                        </div>
                         <div className={styles.textCont}>
                         <h2>{item.name}</h2>
                         <p>{item.description}</p>

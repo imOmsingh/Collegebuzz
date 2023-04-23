@@ -19,9 +19,7 @@
             const eventRoute = require("./routes/Events");
             const userRoute = require("./routes/User");
             const resourceRoute = require("./routes/Resources");
-
-
-
+            const teamsRoute = require("./routes/Teams");
 
 
             server.use(
@@ -36,7 +34,7 @@
             //connection
             const connection = mongoose
               .connect(
-                "mongodb+srv://omsingh200310:omsingh@cluster0.dnpdtx2.mongodb.net/test"
+                "mongodb+srv://omsingh:omsingh@cluster0.wkdje23.mongodb.net/test"
               )
               .then(console.log("Database Connected"))
               .catch((err) => {
@@ -51,6 +49,7 @@
             server.use('/api/event',eventRoute)
             server.use('/api/user',userRoute)
             server.use('/api/resource',resourceRoute)
+            server.use('/api/teams',teamsRoute)
 
 
             

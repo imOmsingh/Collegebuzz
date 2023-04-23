@@ -1,8 +1,10 @@
 import Script from 'next/script';
-import React from 'react'
+import React, { useState } from 'react'
+import Team from '../Teams/Team';
 import styles from "./Hero.module.css";
 
 export default function Hero({event}) {
+    const [option, setOption] = useState('event')
     
   return (
     <div>
@@ -17,49 +19,65 @@ export default function Hero({event}) {
         </div>
     </div>
 
-    <div className={styles.box2}>
-        <h2>About this event</h2>
-      {/* <hr/>  */}
-        <p>{event.description}</p>
-        
+    <div className={styles.optionBar}>
+        <div className={styles.singleOption} id={option === 'event' ? styles.underline : null} onClick={()=>{setOption('event')}} >About Event</div>
+        <div className={styles.singleOption} id={option === 'team' ? styles.underline : null} onClick={()=>{setOption('team')}} >Teams </div>
+
     </div>
-    <br/>
-    <div className={styles.box3}>
-        <div className={styles.time}>
-            <div className={styles.icon}><ion-icon name="alarm"></ion-icon></div>
-            <div className={styles.secondColumn}>
-                <h1 className={styles.titleSpan}>When</h1>
-                {event.startdate}
-                <br/>
-                3:00 PM - 4:00 PM (IST)
+
+        { option === "event" &&
+        <>
+            <div className={styles.box2}>
+            <h2>About this event</h2>
+        {/* <hr/>  */}
+            <p>{event.description}</p>
+            
             </div>
-        </div>
+            <br/>
+            <div className={styles.box3}>
+                <div className={styles.time}>
+                    <div className={styles.icon}><ion-icon name="alarm"></ion-icon></div>
+                    <div className={styles.secondColumn}>
+                        <h1 className={styles.titleSpan}>When</h1>
+                        {event.startdate}
+                        <br/>
+                        3:00 PM - 4:00 PM (IST)
+                    </div>
+                </div>
 
-        <div className={styles.address}>
-            <div className={styles.icon}><ion-icon name="location"></ion-icon></div>
-            <div className={styles.secondColumn}>
-                <h1 className={styles.titleSpan}>Where</h1>
-                {event.collegeId}
+                <div className={styles.address}>
+                    <div className={styles.icon}><ion-icon name="location"></ion-icon></div>
+                    <div className={styles.secondColumn}>
+                        <h1 className={styles.titleSpan}>Where</h1>
+                        {event.collegeId}
+                        <br/>
+                        <span>Neemrana, Rajasthan</span>
+                    </div>
+                </div>
+
+                <div className={styles.Contactus}>
+                    <div className={styles.icon}><ion-icon name="call"></ion-icon><div>
+                    <div className={styles.contact}>
+                        <h1  className={styles.titleSpan}>Contact Us</h1>
+                        Om Singh : 9876543219
+                        <br/>
+                        <span>Archie:9876543219</span>
+                    </div>
+                </div>
+
                 <br/>
-                <span>Neemrana, Rajasthan</span>
             </div>
-        </div>
-
-        <div className={styles.Contactus}>
-            <div className={styles.icon}><ion-icon name="call"></ion-icon><div>
-            <div className={styles.contact}>
-                <h1  className={styles.titleSpan}>Contact Us</h1>
-                Om Singh : 9876543219
-                <br/>
-                <span>Archie:9876543219</span>
             </div>
-        </div>
 
-        <br/>
-    </div>
-    </div>
+            </div>
+        </>
+        }
+        {
+            option === "team" &&
 
-    </div>
+                <Team id={event._id}/>
+
+        }
     </div>
   )
 }

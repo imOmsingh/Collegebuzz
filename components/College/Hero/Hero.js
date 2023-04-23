@@ -34,11 +34,12 @@ export default function Hero({college}) {
     </div>
 
     <div className={styles.optionBar}>
-        <div className={styles.singleOption} onClick={()=>{setOption('hubs')}} id={option === 'hubs' && styles.underline} >College Hubs</div>
-        <div className={styles.singleOption} onClick={()=>{setOption('rosources')}} id={option === 'rosources' && styles.underline}>Resources</div>
-        <div className={styles.singleOption} onClick={()=>{setOption('students')}} id={option === 'students' && styles.underline}>Students</div>
-        <div className={styles.singleOption} onClick={()=>{setOption('annualFests')}} id={option === 'annualFests' && styles.underline} >College Annual Fests</div>
+        <div className={styles.singleOption} onClick={()=>{setOption('hubs')}} id={option === 'hubs' ? styles.underline : null} >College Hubs</div>
+        <div className={styles.singleOption} onClick={()=>{setOption('rosources')}} id={option === 'rosources' ? styles.underline : null}>Resources</div>
+        <div className={styles.singleOption} onClick={()=>{setOption('students')}} id={option === 'students' ? styles.underline : null}>Students</div>
+        <div className={styles.singleOption} onClick={()=>{setOption('annualFests')}} id={option === 'annualFests' ? styles.underline : null} >College Annual Fests</div>
     </div>
+
 
     {
         option === 'hubs'

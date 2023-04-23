@@ -82,7 +82,7 @@
     height:30%;
     background-size:contain;
     object-fit: contain;
-    background-image: url("gdsc.png");
+    position: relative;
 }
 
 .textCont{

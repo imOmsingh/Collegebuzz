@@ -39,7 +39,7 @@ router.get('/getcollege',async (req,res)=>{
         
     } catch (error) {
         
-        res.status(500).json({success:false,message:'College can not be fetched',error});
+        res.status(500).json({success:false,message:'College can not be fetched',error:error.message});
 
     }
 

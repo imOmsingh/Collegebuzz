@@ -10,10 +10,6 @@ export default function Eventhero() {
             <div className={styles.heading2}>Contact Details</div>
             <h2 className={styles.desc2}>Email : omsingh200310@gmail.com</h2>
             <h2 className={styles.desc2}>Whatsapp : 9205322720</h2>
-
-
-
-        
         </div>
     </div>
   )

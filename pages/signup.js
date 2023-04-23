@@ -23,7 +23,6 @@ export default function signup() {
             })
             setUser(true)
             setUserName(name)
-            console.log(res)
             router.push('/')
             
         } catch (error) {
