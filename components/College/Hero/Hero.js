@@ -62,7 +62,7 @@ export default function Hero({college}) {
     {
         option === 'rosources'
         &&
-        <Resources/>
+        <Resources id={college._id}/>
 
     }
 
