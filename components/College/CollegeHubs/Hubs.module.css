@@ -5,6 +5,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .card{
     height: 400px;
     width: 350px;
@@ -54,20 +55,120 @@
     margin-bottom: 5px;
    
 }
-.readMore{
-    width: 80%;
-    height: 40px;
-    color: white;
-    font-weight: 600;
-    background-color: #0056d2;
-    margin: auto;
-    text-align: center;
-    padding-top: 7px;
-    border-radius: 5px;
-    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1) ;
-    cursor: pointer;
-}
-.readMore:hover{
 
-    
+
+
+
+.container
+{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    flex-direction: row;
+}
+.card
+{
+    background:white;
+    display:block;
+    width:350px;
+    /* height:400px; */
+    margin:30px;
+    /* border-radius:1rem 1rem 0 0; */
+}
+
+.cardImage
+{
+    /* background-color:aqua; */
+    height:30%;
+    background-size:contain;
+    object-fit: contain;
+    background-image: url("gdsc.png");
+}
+
+.textCont{
+    height: 50%;
+}
+.card-2
+{
+    background-image: url("gdsc.png");
+}
+.card-3
+{
+    background-image: url("gdsc.png");
+}
+.card h2{
+    padding:0.75rem;
+}
+.card p{
+    padding:0.75rem;
+}
+.readMore{
+    /* background-color:black; */
+    color:blue;
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+    text-align:center;
+    margin:  auto;
+    width: 100%;
+    text-align: center;
+
+}
+.card:hover
+{
+    background-color:rgb(62,62,62);
+    /* box-shadow:rgb(189, 41, 41); */
+    color:white;
+    cursor:pointer;
+    transform:scale(1.03);
+}
+.card hr {
+    width: 90%;
+    margin: 0.5rem auto;
+}
+
+.header {
+    background-color: #fff;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    height: 70px;
+}
+  
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+  
+.navBrand a {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+  
+.navLinks ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+  
+.navLinks li {
+    margin-left: 20px;
+}
+  
+.navLinks a {
+    color:black;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.navLinks a:hover{
+    color:blueviolet;
 }

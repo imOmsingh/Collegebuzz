@@ -1,6 +1,38 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import styles from './Students.module.css'
-export default function Students() {
+export default function Students({id}) {
+
+  const [studentList, setStudentList] = useState([])
+
+  useEffect(() => {
+
+    const fetchStudents = async () =>{
+
+      try {
+
+        const res = await axios.get('/api/user/rankingbycodeforces',{
+          params:{
+            id
+          }
+        })
+        setStudentList(res.data.student)
+        console.log(res)
+        
+      } catch (error) {
+        console.log(error)
+      }
+
+        
+    } 
+
+    fetchStudents();
+    
+  }, [])
+
+
+  
+
   return (
     <div className={styles.mainCont}>
         {/* <main> */}
@@ -11,14 +43,22 @@ export default function Students() {
       <div id={styles.leaderboard}>
         <div className={styles.ribbon}></div>
         <table>
-          <tr>
-            <td className={styles.number}>1</td>
-            <td className={styles.name}>Arpit</td>
-            <td className={styles.points}>
-              900
-            </td>
-          </tr>
-          <tr>
+          {
+            studentList &&
+            studentList.map((item,index)=>{
+              return(
+                <tr key={index}>
+                  <td className={styles.number}>{index+1}</td>
+                  <td className={styles.name}>{item.name}</td>
+                  <td style={{color:'black'}} className={styles.points}>
+                    {item.codeforce_rating? <>{item.codeforce_rating}</> : <>-</>}
+                  </td>
+                </tr>
+              )
+            })
+          }
+          
+          {/* <tr>
             <td className={styles.number}>2</td>
             <td className={styles.name}>Archie</td>
             <td className={styles.points}>
@@ -52,7 +92,7 @@ export default function Students() {
             <td className={styles.points}>
               900
             </td>
-          </tr>
+          </tr> */}
           
         </table>
        
